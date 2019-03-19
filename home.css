@@ -1,0 +1,83 @@
+.moviecard{
+	width: 300px;
+	height: 450px;
+	margin-left: 50px;
+	margin-top: 100px;
+	margin-right: 40px;
+	float: left;
+	border-radius: 20px;
+	background-image: url("images/moviecard.jpg");
+}
+.detailsName{
+	color: black;
+}
+.headingReview{
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 50px;
+	background-color: #66b3ff;
+	position: fixed;
+}
+.reviewBody{
+	background-image: url("images/moviecard.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.heading{
+	width: 100%;
+	margin-right: 10px;
+	height: 50px;
+	background-color: #66b3ff;
+	position: fixed;
+}
+#name{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+#username{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;	
+}
+#imageDiv{
+	margin-left: 30px;
+	margin-top: 15px;
+}
+#NameAndReview{
+  	box-shadow: 1px 1px 1px 1px #888888;
+	margin-top: 50px;	
+	margin-left: 250px;
+	margin-right: 200px;
+	width: 50%;
+	background-color: #66b3ff;
+	text-align: justify;
+	padding: 20px;
+}
+#search{
+	float: right;
+	margin-right: 100px;
+	margin-top: 15px;
+	width: 30%;
+}
+p.movieReview{
+	padding: 10px;
+	text-align: justify;
+}
+.loginFrontPage{
+	margin-top: 100px;
+	background-color:  #66b3ff;
+	padding: 50px;
+	border-radius: 20px;
+	width: 50%;
+}
+.movieName{
+	background-color: #66b3ff;
+}
+#para{
+	text-align: center;
+}
+.login{
+	size: 50px;
+	margin-top: 10px;
+}

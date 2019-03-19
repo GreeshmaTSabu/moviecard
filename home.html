@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+	<div id="maindiv">
+		<div class="heading" id="heading">
+			<h2 style="color: black; float: left;" id="name"></h2>
+
+			<input type="text" value="" onkeyup="searchMovie(this.value)" name="search" id="search" placeholder="search">
+		</div>
+		<div id="listdiv">
+		</div>
+	</div>
+	<script type="text/javascript">
+		var username = window.location.href;
+		var username = new URL(username);
+		var username = username.searchParams.get("username");
+		document.getElementById('name').innerHTML = username;
+		localStorage.setItem("movieObjectList",JSON.stringify([
+			{name: "Lucifer",rating: 8.2,review :"Lucifer is an upcoming Indian Malayalam-language film directed by Prithviraj Sukumaran and written by Murali Gopy. Produced by Antony Perumbavoor through the production house Aashirvad Cinemas, the film marks Prithviraj's directorial debut and features Mohanlal in the lead role (Stephen Nedumpally) alongside a supporting cast including Vivek Oberoi, Manju Warrier, Tovino Thomas, Indrajith Sukumaran, Saniya Iyappan, Saikumar, Kalabhavan Shajohn, and Nyla Usha. Deepak Dev provided the music for the film.Development of Lucifer began in 2012 with Rajesh Pillai as the director, story by Murali, and Mohanlal and Antony as the lead actor and producer. However, the film was delayed and Pillai died in 2016. Murali revived the project with a fresh script and actor Prithviraj came on-board as director in late 2016. Pre-production of Lucifer began in the following year and Murali completed the final draft of the screenplay in February 2018. Principal photography began in mid-July that year and lasted till January 2019, with filming carried out at locations in Idukki, Thiruvananthapuram, Ernakulam, and Kollam districts, and Mumbai, Bangalore, Lakshadweep, and Russia.",image: "images/lucifer.jpg"},
+
+			{name: "Yathra",rating: 8.2,review :"Yatra is not a film about just one man. It is about what that one-man meant to millions of people.Director-writer Mahi V Raghav told me that political biopics has never clicked at the box office in India. He did not just understand the risk of taking up such a project, he was also mindful not to repeat the common mistakes of the biopic genre. The hack is not to burden the script with too much information. For example, NTR: Kathanayakudu was crammed with way too many details that weighed down the entire film. The filmmakers had included at least three different moments just to illustrate one point: NTR was always punctual. He was neither late nor early. He was always on time. A passing reference would have served the purpose, instead of dedicating the precious screentime to play up this trivia, which has no value to add to the narration.But, for Raghav, facts are not as important as narrative. He has avoided writing trivial details into the script, by focusing on just one part of YSR’s life, where he revived the fortunes of a political party that was staring at a definite electoral loss.",image: "images/melle.jpg"},
+
+			{name: "June",rating: 8,review :"June opens with a familiar image: a young woman, June (Rajisha Vijayan), takes a solo trip to supposedly give her life a fresh start. It’s easy to guess what prompted her to take this journey, and soon enough, episodic flashbacks transport us to her high school days. The entire film, in fact, feels familiar, but the fresh treatment saves it from being another cliched nostalgia trip. Friendship, romance, heartbreak, reunions, and weddings. This is what June is all about. It introduces us to a group of fun characters who bear resemblances to your former classmates — you feel like hanging out with them. There is June’s first crush and boyfriend Noel (Sarjano Khalid) — a slightly introverted kid yearning to be a filmmaker — and then there is Anand (Arjun Ashokan), a stalker from a different school. After they enter adulthood, things turn a bit complicated because Noel’s constant need to please his father irks the independent June.Anand goes through an interesting transformation in the second half, which brings a much-needed lightheartedness to the proceedings. After the recent Varathan, Arjun once again impresses with a vibrant performance. I also developed a particular fondness for the ‘Asura’ trio played by Sanju KS, Akhil Manoj, and Harisankar.",image: "images/june.jpg"},
+
+			{name: "Adar Love",rating: 5.2,review :"Oru Adaar Love (lit. A fantastic love) is a 2019 Indian Malayalam-language romantic comedy film directed by Omar Lulu.[1] The screenplay was written by Sarang Jayaprakash and Lijo Panadan from a story by Lulu, and produced by Ousepachan Vaalakuzhy under his production company Ousepachan Movie House. The film features Roshan Abdul Rahoof, Noorin Shereef, Priya Prakash Varrier, Siyadh Shajahan, Vaishak Pavanan and Michelle Ann Daniel in principal roles.The story deals with high school romance. Oru Adaar Love gained nationwide attention due to a clip which went viral, from the song 'Manikya Malaraya Poovi'.It prompted the makers to make changes in script, which delayed production. The film was released on 14 February 2019. It was dubbed and released in Tamil with the same title, in Kannada as Kirik Love Story and in Telugu as Lover's Day.",image: "images/adarlove.jpg"},
+
+			{name: "Mayanadi",rating: 9.5,review :"Mathew (Tovino Thomas) is an orphan, living as a thug. He participates in an undercover deal on behalf of his boss, who is busy with his daughter's schooling. Mathew convinces his group that their boss is intentionally pulling out of the deal due to the risk involved. However, they reach the hotel without any issue. While Mathew is taking a bath, three police officers disguised as civilians enter the rooms and kill the accompanying three gang members. Mathew hides in the tub, and during his escape, accidentally kills an officer. He reaches Kochi and moves in with his ex-boss and longtime friend Shaji.Mathew intends to settle abroad with his girlfriend Aparna (Aishwarya Lekshmi) ('Appu'), who is an aspiring actress and is auditioning for a role. In this, she is helped by her ex-roommate Sameera (Leona Lishoy), who is now a successful actress. Aparna is also making a livelihood as an anchor for parties and other events. Mathew suggests his plans to settle abroad using the money he got from the deal. But she refuses to move out with him, as she believes that Mathew stole it. She gets an offer for an ad-shoot and travels to Kasaragod. Mathew accidentally meets her and accompanies her.Mathew's boss is taken into custody and he provides details on Mathew. He asks the officers to kill him and keep the looted money for themselves.",image: "images/mayanadi.jpg"},
+
+			{name: "Vijay superum pournamiyum",rating: 8.5,review :"Vijay Superum Pournamiyum is a 2019 Indian Malayalam-language Romantic comedy film written and directed by Jis Joy, Starring Asif Ali and Aishwarya Lekshmi in the lead roles along with Balu Varghese, Siddique, Aju Varghese and Renji Panicker in supporting roles. It is the official remake of 2016 Telugu Hit film Pelli Choopulu. The film has musical score composed by debutant Prince George. It was released on 2019 January 11 to highly positive reviews from the critics as well as the audience.The film was produced by A. K. Sunil under the banner of New Surya Films. The film is the third collaboration of Jis Joy and Asif Ali, who have earlier worked together in Bicycle Thieves and Sunday Holiday. It is a romantic-comedy and the director had earlier said that it will be a small, message-driven film with elements suitable for a family audience.A young engineering student dreams of becoming a chef, much to the dismay of his family.The movie revolves around Vijay (Asif Ali) and Pournami (Aiswarya) who met through a matchmaking mistakenly. Vijay is a baccalaureate in Engineering. Pournami is a MBA graduate who aims to be a business entrepreneur. Both of them from a young age are motivated to be the best but alas they are not. Both of them are ambitious, Vijays dream is to be a restaurateur rather than be an engineer. Meanwhile, Pournami has dreams in starting a business even after failing in business after business. She intends to go to Australia to pay back her parents the money she has lost through her ventures. The core of the film takes us through structure of love that makes living interesting without resulting in divorces, and how arranged marriages succeed in real life.",image: "images/vsp.jpg"},
+
+			{name: "Kumbalangi Nights",rating: 8.5,review :"Kumbalangi Nights is a 2019 Indian Malayalam-language comedy-drama film directed by Madhu C. Narayanan (in his directorial debut) and written by Syam Pushkaran. It is jointly produced by Fahadh Faasil, Nazriya Nazim, Dileesh Pothan, and Shyam Pushkaran under their production houses Fahadh Faasil and Friends and Working Class Hero. The film stars Shane Nigam, Soubin Shahir, Fahadh Faasil, Sreenath Bhasi, Anna Ben, and Mathew Thomas in the lead roles.Saji, Bony, Bobby, and Frankie are four brothers living in a small, cramped house in the wasteland area of Kumbalangi. Saji has anger issues, and often gets into fights with Bobby. Frankie is ashamed of Saji and Bobby but he gets along well with his second brother, Bony, who is mute.Bobby is a lazy wastrel but he tries to improve his job prospects to win over the family of his girlfriend Baby who belongs to a reasonably well-to-do family. Meanwhile, Bony meets an American tourist Nyla, and the two of them end up spending a night together in the homestay owned by Baby's family. Shammi, Baby's brother-in-law discovers them and kicks them out. Bony invites Nyla to his house.It is revealed that Saji's father married Bony's mother, and then gave birth to Bobby and Frankie. Their father died, and the mother left her children to join a religious mission, leaving Saji to be their father figure.",image: "images/kumbalangi.jpg" },
+
+			{name: "Joseph",rating: 9,review :"Joseph is a 2018 Malayalam-language Indian thriller-drama film directed by M. Padmakumar and written by Shahi Kabir. It stars Joju George, Dileesh Pothan, Irshad, Athmiya, Johny Antony, Sudhi Koppa, Malavika Menon, and Madhuri Braganza.The movie starts with Peter (Dileesh Pothan) receiving a medal from police. After the ceremony, while Peter and Joseph's (Joju George) friends are traveling in a taxi, the driver enquires the cause for receiving the medal. The story then shifts to Joseph, a retired policeman who has unique and sharp investigation skills. A lonely Joseph is separated from his wife Stella (Athmiya Rajan), the latter who then marries Peter. He is then called by the SP of police to investigate a crime scene involving the murder of an old couple. He then reaches the crime scene and investigates. Upon questioning the people present at the crime scene it is revealed that a guy called Manu was the first one to witness the incident when he came to supply milk to their house and he was the one who informed the police. Joseph after questioning the members present at the crime scene resorts to go for a drink with one of the workers who was helping to remove the corpse away from the crime scene. They decide to go to Manu's house for booze. He then sends Manu to get a Pepsi for him. When Manu comes back he is shocked to find police in his house and Joseph declares Manu as the culprit. The police then arrest Manu and it is revealed that Joseph turns out to be actually reliable after he presented various findings to the SP of police.",image: "images/joseph.jpg"},
+
+			{name: "Mikhael",rating: 7,review :"Director Haneef Adeni's Malayalam movie Mikhael starring Nivin Pauly, Manjima Mohan and Unni Mukundan has received positive review and rating from the audience.Mikhael is an action thriller with a good dose of other commercial elements to woo the family audience. Besides direction, Haneef Adeni has written the script and dialogues for the movie, which has been produced by Anto Joseph Film Company. The film has received a U/A certificate from the censor board and its runtime is 2.30 hours.Mikhael movie story: The film evolves between two families. Mike (Nivin Pauly) is a doctor, who is a guardian angel in the mortal man's world. He set out for revenge against someone, who has done injustice his family. How protects his beloved sister from a family feud forms the crux of the story.Businessman and Gold smuggler George Peter and his driver gets killed under mysterious circumstances.Police investigators Eagle Easa and Isaac finds that it was done by a surgical blade and starts searching medical shops.They suspect whether it was a doctor.At the same time Marco JR ,Peter's brother meets Davis and his sons,their rivals to ask whether it was their work.During the talk ,Davi's son Alexander talks arrogantly to Marco which makes Marco angry .So Marco shoots and kills Alexander.During his funeral Easa meets Davis to ask him whether it was Marco.Davis does not reveal it thinking that he could repay on his own.Some days after an unknown person shoots Patrick,the mid stander between the 2 gangs.Easa and Isaac takes him to Star Hospital where he gets murdered even though the police had established maximum security.",image: "images/mikhael.jpg"},
+			]));
+
+		var movieObjectListArray = JSON.parse(localStorage.getItem("movieObjectList"));
+		var divContent = "";		
+		for(var i = 0 ; i< movieObjectListArray.length; i++){
+			divContent = divContent + 
+						'<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '">\
+							<div id="imageDiv"><img src="'+movieObjectListArray[i]["image"] + '">\
+						    </div>\
+							<div >\
+								<h3 class="movieNameAndRating">' + movieObjectListArray[i]["name"] + '</h3>\
+							</div>\
+							<div>\
+								<h5 class="movieNameAndRating">' + movieObjectListArray[i]["rating"] + '/10\</h5>\
+							</div>\
+						</div>';
+		}
+		var movieObjectListArray = JSON.parse(localStorage.getItem("movieObjectList"));
+		var divContent = "";
+		for(var i = 0 ; i< movieObjectListArray.length; i++){
+			divContent = divContent + 
+						'<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '">\
+							<div id="imageDiv">\
+								<img class="image" src="' + movieObjectListArray[i]["image"] + '">\
+							</div>\
+							<div>\
+								<h3 class="details">' + movieObjectListArray[i]["name"] + '</h3>\
+							</div>\
+							<div>\
+								<h5 class="details">' + movieObjectListArray[i]["rating"] + '/10</h5>\
+							</div>\
+						</div>';
+		}
+		document.getElementById('listdiv').innerHTML = divContent;
+		function review(i){
+			var movieName = movieObjectListArray[i]["name"];
+			var review = movieObjectListArray[i]["review"];
+			var year = movieObjectListArray[i]["year"];
+			var rating = movieObjectListArray[i]["rating"];
+			window.location.href = "review.html?movieName="+movieName+"&review="+review+"&year="+year+"&rating="+rating+"&username="+username;
+		}
+		var SearchString = "";
+		function searchMovie(SearchString){
+			var divContent = "";
+			for (var i = 0; i < movieObjectListArray.length; i++) {
+				var movie = movieObjectListArray[i]["name"];
+				movie = movie.toUpperCase(movie);
+				SearchString = SearchString.toUpperCase(SearchString);
+				if (movie.search(SearchString) > -1) {
+					divContent = divContent + 
+					'<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '">\
+						<div id="imageDiv"><img class="image" src="' + movieObjectListArray[i]["image"] + '">\
+						</div>\
+						<div >\
+							<h3 class="detailsName">' + movieObjectListArray[i]["name"] + 
+							'</h3>\
+						</div>\
+						<div>\
+							<h5 class="detailsRating">' + movieObjectListArray[i]["rating"] + '/10\
+							</h5>\
+						</div>\
+					</div>';
+				}
+			}
+			document.getElementById('listdiv').innerHTML = divContent;
+		}
+
+ 
+	</script>
+</body>
+</html>
