@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>review</title>
+	<title>MovieReview</title>
 	<link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		var movieName = window.location.href;
 		var movieName = new URL(movieName);
-		var movieName = movieName.searchParams.get("movieName");
+		var movieName = movieName.searchParams.get("movieName"); // fetching movieName from URL
 		
 		var review = window.location.href;
 		var review = new URL(review);
@@ -24,10 +24,12 @@
 		var username = new URL(username);
 		var username = username.searchParams.get("username");
 		
+		// Displaying the review of the movie
+		
 		document.getElementById('NameAndReview').innerHTML = '<div><h3><center>' + movieName.toUpperCase() + 
-																'</center></h3><p>' + review + 
-																'</p>\
-															  </div>';
+									'</center></h3><p>' + review + 
+									'</p>\
+								      </div>';
 		document.getElementById('username').innerHTML = username;
 	</script>
 </body>
