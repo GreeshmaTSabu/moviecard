@@ -57,7 +57,7 @@
 #search{
 	float: right;
 	margin-right: 100px;
-	margin-top: 15px;
+	//margin-top: 15px;
 	width: 30%;
 }
 p.movieReview{
