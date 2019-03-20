@@ -6,10 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body class="reviewBody">
+	
+	/*Creates Login Form*/
+	
 	<center>
 		<div>
 			<div class="loginFrontPage">
-				<h1 style="font-family:Arial Black; text-align: center;">Login Page</h1>
+				<h1 class="loginHeading">Login Page</h1>
 				<form name="login">
 					<p>Username&emsp;<id="space"><input type="email" name="userid" id="user"/></p>
 					<p>Password&emsp;&nbsp;<input type="password" name="pass" id="pass"/></p>
@@ -21,7 +24,9 @@
 		</div>
 	</center>
 	<script language="javascript">
-	/*Function check*/
+		
+	/*Function check the login details*/
+		
 		function check(form){
  			if(form.userid.value == "greesh2808@gmail.com" && form.pass.value == "123"){
   				var useremail = form.userid.value;
