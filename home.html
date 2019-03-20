@@ -6,12 +6,14 @@
 </head>
 <body>
 	<div id="maindiv">
-		<div class="heading" id="heading">
-			<h2 style="color: black; float: left;" id="name"></h2>
-
+		<div class="heading">
+			<h2 id="name">
+				
+			</h2>
 			<input type="text" value="" onkeyup="searchMovie(this.value)" name="search" id="search" placeholder="search">
 		</div>
 		<div id="listdiv">
+			
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -19,6 +21,9 @@
 		var username = new URL(username);
 		var username = username.searchParams.get("username");
 		document.getElementById('name').innerHTML = username;
+		
+		// localStorage to store movie details
+		
 		localStorage.setItem("movieObjectList",JSON.stringify([
 			{name: "Lucifer",rating: 8.2,review :"Lucifer is an upcoming Indian Malayalam-language film directed by Prithviraj Sukumaran and written by Murali Gopy. Produced by Antony Perumbavoor through the production house Aashirvad Cinemas, the film marks Prithviraj's directorial debut and features Mohanlal in the lead role (Stephen Nedumpally) alongside a supporting cast including Vivek Oberoi, Manju Warrier, Tovino Thomas, Indrajith Sukumaran, Saniya Iyappan, Saikumar, Kalabhavan Shajohn, and Nyla Usha. Deepak Dev provided the music for the film.Development of Lucifer began in 2012 with Rajesh Pillai as the director, story by Murali, and Mohanlal and Antony as the lead actor and producer. However, the film was delayed and Pillai died in 2016. Murali revived the project with a fresh script and actor Prithviraj came on-board as director in late 2016. Pre-production of Lucifer began in the following year and Murali completed the final draft of the screenplay in February 2018. Principal photography began in mid-July that year and lasted till January 2019, with filming carried out at locations in Idukki, Thiruvananthapuram, Ernakulam, and Kollam districts, and Mumbai, Bangalore, Lakshadweep, and Russia.",image: "images/lucifer.jpg"},
 
@@ -38,39 +43,29 @@
 
 			{name: "Mikhael",rating: 7,review :"Director Haneef Adeni's Malayalam movie Mikhael starring Nivin Pauly, Manjima Mohan and Unni Mukundan has received positive review and rating from the audience.Mikhael is an action thriller with a good dose of other commercial elements to woo the family audience. Besides direction, Haneef Adeni has written the script and dialogues for the movie, which has been produced by Anto Joseph Film Company. The film has received a U/A certificate from the censor board and its runtime is 2.30 hours.Mikhael movie story: The film evolves between two families. Mike (Nivin Pauly) is a doctor, who is a guardian angel in the mortal man's world. He set out for revenge against someone, who has done injustice his family. How protects his beloved sister from a family feud forms the crux of the story.Businessman and Gold smuggler George Peter and his driver gets killed under mysterious circumstances.Police investigators Eagle Easa and Isaac finds that it was done by a surgical blade and starts searching medical shops.They suspect whether it was a doctor.At the same time Marco JR ,Peter's brother meets Davis and his sons,their rivals to ask whether it was their work.During the talk ,Davi's son Alexander talks arrogantly to Marco which makes Marco angry .So Marco shoots and kills Alexander.During his funeral Easa meets Davis to ask him whether it was Marco.Davis does not reveal it thinking that he could repay on his own.Some days after an unknown person shoots Patrick,the mid stander between the 2 gangs.Easa and Isaac takes him to Star Hospital where he gets murdered even though the police had established maximum security.",image: "images/mikhael.jpg"},
 			]));
-
-		var movieObjectListArray = JSON.parse(localStorage.getItem("movieObjectList"));
-		var divContent = "";		
-		for(var i = 0 ; i< movieObjectListArray.length; i++){
-			divContent = divContent + 
-						'<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '">\
-							<div id="imageDiv"><img src="'+movieObjectListArray[i]["image"] + '">\
-						    </div>\
-							<div >\
-								<h3 class="movieNameAndRating">' + movieObjectListArray[i]["name"] + '</h3>\
-							</div>\
-							<div>\
-								<h5 class="movieNameAndRating">' + movieObjectListArray[i]["rating"] + '/10\</h5>\
-							</div>\
-						</div>';
-		}
+		
+		// Display moviecards with movie details
+		
 		var movieObjectListArray = JSON.parse(localStorage.getItem("movieObjectList"));
 		var divContent = "";
 		for(var i = 0 ; i< movieObjectListArray.length; i++){
 			divContent = divContent + 
 						'<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '">\
 							<div id="imageDiv">\
-								<img class="image" src="' + movieObjectListArray[i]["image"] + '">\
+								<img src="' + movieObjectListArray[i]["image"] + '">\
 							</div>\
 							<div>\
-								<h3 class="details">' + movieObjectListArray[i]["name"] + '</h3>\
+								<h3>' + movieObjectListArray[i]["name"] + '</h3>\
 							</div>\
 							<div>\
-								<h5 class="details">' + movieObjectListArray[i]["rating"] + '/10</h5>\
+								<h5">' + movieObjectListArray[i]["rating"] + '/10</h5>\
 							</div>\
 						</div>';
 		}
 		document.getElementById('listdiv').innerHTML = divContent;
+		
+		// Pass movie details to next page
+		
 		function review(i){
 			var movieName = movieObjectListArray[i]["name"];
 			var review = movieObjectListArray[i]["review"];
@@ -78,6 +73,9 @@
 			var rating = movieObjectListArray[i]["rating"];
 			window.location.href = "review.html?movieName="+movieName+"&review="+review+"&year="+year+"&rating="+rating+"&username="+username;
 		}
+		
+		// Function to perform Search Movies
+		
 		var SearchString = "";
 		function searchMovie(SearchString){
 			var divContent = "";
